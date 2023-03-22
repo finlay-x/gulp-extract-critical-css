@@ -16,12 +16,12 @@ $   npm install gulp-extract-critical-css --save-dev
 ### **Inside your gulpfile:**
 ```JavaScript
 const gulp = require('gulp');
-const extractCriticalCss = require('gulp-extract-critical-css');
+const extractCriticalCss = require('./extract-critical-css');
 
 function criticalCSS() {
-    return src('./dist/style.css')
+    return gulp.src('./dist/style.css')
       .pipe(extractCriticalCss())
-      .pipe(dest('./dist/'));
+      .pipe(gulp.dest('./dist/'));
 }
 
 exports.criticalCSS = series(criticalCSS)
