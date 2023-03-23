@@ -63,3 +63,10 @@ header {
     background: red;
 }
 ```
+
+### **Options:**
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `inlineCritical` | Boolean | `false` | Create a critical.css or inline the critical CSS. |
+| `inlinePath` | string | - | A path to a file that contains your closing `</head>` tag, this is where the inlined CSS will be appended. <br /> **Required if `inlineCritical` is set to `true`** |
+| | | | |

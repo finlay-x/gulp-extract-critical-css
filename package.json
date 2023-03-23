@@ -1,6 +1,6 @@
 {
   "name": "gulp-extract-critical-css",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Extract critical CSS from a CSS file",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,8 @@
     "gulp",
     "critical",
     "css",
-    "plugin"
+    "plugin",
+    "gulpplugin"
   ],
   "author": "Finlay",
   "license": "MIT",
