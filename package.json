@@ -1,6 +1,6 @@
 {
   "name": "gulp-extract-critical-css",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Extract critical CSS from a CSS file",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,8 @@
     "vinyl": "^2.2.1"
   },
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-tap": "^2.0.0"
   },
   "bugs": {
     "url": "https://github.com/finlay-x/gulp-extract-critical-css/issues"

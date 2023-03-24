@@ -42,6 +42,7 @@ function extractCriticalCss(file, contents) {
 module.exports = function (options) {
   const inlinePath = options?.inlinePath;
   const inlineCritical = options?.inlineCritical;
+  const modifySource = options?.modifySource;
 
   if ((inlineCritical === true && !inlinePath)) {
     throw new Error("gulp-extract-critical-css: You have set `inlineCritical` to be true, however no `inlinePath` is set. Please use `inlinePath` to set a path to the file where your </head> element exists.");
@@ -64,9 +65,6 @@ module.exports = function (options) {
                 file,
                 file.contents.toString()
             );
-
-            file.contents = Buffer.from(contents);
-            this.push(file);
 
             if (inlineCritical && inlinePath) {
                 const inlineContents = fs.readFileSync(inlinePath, {
@@ -96,8 +94,17 @@ module.exports = function (options) {
                 this.criticalCss = this.criticalCss || "";
                 this.criticalCss += criticalCss;
             }
+            
+            if (modifySource === true){
+                file.contents = Buffer.from(contents);
+            }
+
+            this.push(file);
+
         } catch (err) {
+
           this.emit("error", err);
+          
         }
       }
 
